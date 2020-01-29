@@ -12,7 +12,7 @@ PImage  sun,
         pluto;  
 import com.hamoid.*;
 
-VideoExport videoExport;
+// VideoExport videoExport;
 
 float sunAngle = 0; 
 float sunSpeed = 0.04;
@@ -87,8 +87,8 @@ void setup()
   pluto = loadImage("pluto.png"); 
   pluto.resize(40, 40);
   
-  videoExport = new VideoExport(this);
-  videoExport.startMovie();
+  // videoExport = new VideoExport(this);
+  // videoExport.startMovie();
 }
 
 void draw() 
@@ -176,12 +176,12 @@ void draw()
   neptuneAngle  += neptuneSpeed; 
   plutoAngle    += plutoSpeed; 
   
-  videoExport.saveFrame();
+  //videoExport.saveFrame();
 }
 
 void keyPressed() {
   if (key == 'q') {
-    videoExport.endMovie();
+    // videoExport.endMovie();
     exit();
   }
 }
