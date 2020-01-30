@@ -27,6 +27,8 @@ void setup()
   text("green mse ratio: "      + mseInfo[1], 520, 110);
   text("blue mse ratio: "       + mseInfo[2], 520, 140);
   text("average mse ratio: "    + mseInfo[3], 520, 170);
+  text("psnr ratio: "           + psnr(im, imq), 520, 200);
+
 }
 
 void draw()
@@ -131,6 +133,13 @@ float[] mse(PImage a, PImage b)
   result[3] = (result[0] + result[1] + result[2]) / 3; 
 
   return result;
+}
+
+float psnr(PImage a, PImage b)
+{
+  float argument = sq(255) / mse(a, b)[3]; 
+  
+  return 10 * (log(argument) / log(10)); 
 }
 
 void keyPressed()
