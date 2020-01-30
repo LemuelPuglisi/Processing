@@ -47,9 +47,9 @@ PImage rgbQuant(PImage im, int n)
       
       color pixel = tmp.get(i, j);
       
-      float r = (red(pixel)   * n) / 256;
-      float g = (green(pixel) * n) / 256; 
-      float b = (blue(pixel)  * n) / 256;
+      float r = floor((red(pixel)   * n) / 256);
+      float g = floor((green(pixel) * n) / 256); 
+      float b = floor((blue(pixel)  * n) / 256);
       
       r = map(r, 0, n, 0, 255); 
       g = map(g, 0, n, 0, 255); 
